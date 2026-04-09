@@ -1,0 +1,20 @@
+#Based on LOZ blood moon times
+
+from datetime import datetime, timedelta
+
+def blood_moon(time):
+  #Time input in format HH:MM
+  time = datetime.strptime(time, "%H:%M")
+
+  #Setting up list for predicted blood moon times
+  blood_moon_times = []
+
+  #Looping for three predicted times when blood moon should occur in game
+  for i in range(3):
+    time = time + timedelta(hours=2, minutes=48)
+    blood_moon_times.append(time.strftime("%H:%M"))
+
+  return blood_moon_times
+
+#For testing
+blood_moon('01:00')
