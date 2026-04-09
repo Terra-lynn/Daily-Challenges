@@ -1,0 +1,21 @@
+def wordle_guess(secret, guess):
+  try:
+    #Setting max word length to five like wordle rules
+    max_len = 5
+    count = 0
+    secret = secret[:max_len]
+    guess = guess[:max_len]
+
+    #Looping through secret and finding same letters in the same word position
+    for i in range(len(secret)):
+      if secret[i] == guess[i]:
+        count += 1
+
+    #Printing and returning how many letters are in the same position
+    print(count)
+    return count
+  except:
+    print('failure')
+
+#For testing  
+wordle_guess('SMILE', 'SMOTE')
